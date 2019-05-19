@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent =new Intent(this, LoadingActivity.class);
-        startActivity(intent);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -42,6 +40,9 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        Intent intent =new Intent(this, LoadingActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -82,19 +83,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-//        if (id == R.id.nav_home) {
-//            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_tools) {
-//
-//        } else if (id == R.id.nav_share) {
-//
-//        } else if (id == R.id.nav_send) {
-//
-//        }
+        if (id == R.id.nav_home) {
+            // Handle the camera action
+        } else if (id == R.id.nav_event) {
+
+        } else if (id == R.id.nav_cook) {
+
+        } else if (id == R.id.nav_develop) {
+
+        } else if (id == R.id.nav_fantasy) {
+
+        } else if (id == R.id.nav_IT) {
+
+        }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

@@ -12,12 +12,12 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Fragment_Main.OnFragmentInteractionListener} interface
+ * {@link Fragment_Home.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Fragment_Main#newInstance} factory method to
+ * Use the {@link Fragment_Home#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment_Main extends Fragment {
+public class Fragment_Home extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +29,7 @@ public class Fragment_Main extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Fragment_Main() {
+    public Fragment_Home() {
         // Required empty public constructor
     }
 
@@ -39,11 +39,11 @@ public class Fragment_Main extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment_Main.
+     * @return A new instance of fragment Fragment_Home.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment_Main newInstance(String param1, String param2) {
-        Fragment_Main fragment = new Fragment_Main();
+    public static Fragment_Home newInstance(String param1, String param2) {
+        Fragment_Home fragment = new Fragment_Home();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,7 +64,7 @@ public class Fragment_Main extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__main, container, false);
+        return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -74,16 +74,6 @@ public class Fragment_Main extends Fragment {
         }
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
 
     @Override
     public void onDetach() {
