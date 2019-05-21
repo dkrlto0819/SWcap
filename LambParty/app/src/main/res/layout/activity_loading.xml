@@ -13,5 +13,5 @@
         android:layout_marginEnd="84dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mark" />
+        app:srcCompat="@drawable/icon" />
 </android.support.constraint.ConstraintLayout>
