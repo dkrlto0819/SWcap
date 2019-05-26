@@ -11,7 +11,9 @@
         android:layout_height="300dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="130dp"
         android:src="@drawable/ic_menu_gallery"
+        app:layout_constraintEnd_toStartOf="@+id/buybookWriter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,10 +24,25 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="30dp"
         android:text="제목"
+        android:textSize="20dp"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buybookImage"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/buybookWriter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="45dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="저자"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buybookImage"
+        app:layout_constraintTop_toBottomOf="@+id/buybookTitle" />
 
 
 </android.support.constraint.ConstraintLayout>
