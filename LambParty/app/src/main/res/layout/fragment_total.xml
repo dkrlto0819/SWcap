@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/totalbookImage"
+        android:id="@+id/total_bookImage"
         android:layout_width="200dp"
         android:layout_height="300dp"
         android:layout_marginStart="10dp"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/totalbookTitle"
+        android:id="@+id/total_bookTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -28,37 +28,37 @@
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/totalbookImage"
+        app:layout_constraintStart_toEndOf="@+id/total_bookImage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/totalbookWriter"
+        android:id="@+id/total_bookAuthor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
         android:paddingRight="10dp"
         android:text="저자"
         android:textColor="#000000"
         android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/totalbookImage"
-        app:layout_constraintTop_toBottomOf="@+id/totalbookTitle" />
+        app:layout_constraintStart_toEndOf="@+id/total_bookImage"
+        app:layout_constraintTop_toBottomOf="@+id/total_bookTitle" />
 
     <TextView
-        android:id="@+id/totalbookcontent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/total_bookContent"
+        android:layout_width="193dp"
+        android:layout_height="208dp"
         android:layout_marginTop="10dp"
-        android:paddingLeft="10dp"
+        android:layout_marginLeft="10dp"
         android:paddingRight="10dp"
         android:text="줄거리"
         android:textColor="#000000"
         android:textSize="15dp"
-        app:layout_constraintStart_toEndOf="@+id/totalbookImage"
-        app:layout_constraintTop_toBottomOf="@+id/totalbookWriter" />
+        app:layout_constraintStart_toEndOf="@+id/total_bookImage"
+        app:layout_constraintTop_toBottomOf="@+id/total_bookAuthor" />
 
     <Button
-        android:id="@+id/totalButton"
+        android:id="@+id/total_allButton"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginTop="15dp"
@@ -68,10 +68,10 @@
         android:textColor="#ffffff"
         android:background="#B9A7E1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/totalbookImage" />
+        app:layout_constraintTop_toBottomOf="@+id/total_bookImage" />
 
     <Button
-        android:id="@+id/priceButton"
+        android:id="@+id/tatol_priceButton"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginTop="15dp"
@@ -80,11 +80,11 @@
         android:text="가격"
         android:textColor="#ffffff"
         android:background="#B9A7E1"
-        app:layout_constraintStart_toEndOf="@+id/totalButton"
-        app:layout_constraintTop_toBottomOf="@+id/totalbookImage" />
+        app:layout_constraintStart_toEndOf="@+id/total_allButton"
+        app:layout_constraintTop_toBottomOf="@+id/total_bookImage" />
 
     <Button
-        android:id="@+id/mileageButton"
+        android:id="@+id/total_mileageButton"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginTop="15dp"
@@ -93,10 +93,10 @@
         android:text="마일리지"
         android:textColor="#ffffff"
         android:textSize="10dp"
-        app:layout_constraintStart_toEndOf="@+id/priceButton"
-        app:layout_constraintTop_toBottomOf="@+id/totalbookImage" />
+        app:layout_constraintStart_toEndOf="@+id/tatol_priceButton"
+        app:layout_constraintTop_toBottomOf="@+id/total_bookImage" />
     <TableLayout
-        android:id="@+id/totalTable"
+        android:id="@+id/total_Table"
         android:layout_width="350dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
@@ -105,7 +105,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/totalButton">
+        app:layout_constraintTop_toBottomOf="@+id/total_allButton">
 
         <TableRow>
 
