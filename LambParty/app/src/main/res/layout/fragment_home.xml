@@ -8,31 +8,36 @@
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/week_bestseller"
+            android:id="@+id/home_weekBestseller"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:text="이달의 주간 베스트"
-            android:textSize="40dp"
-            app:layout_constraintStart_toStartOf="@+id/bestSeller_List1"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/bestSeller_List1"
+            android:id="@+id/home_bestSellerList1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/week_bestseller">
+            app:layout_constraintTop_toBottomOf="@+id/home_weekBestseller">
 
             <ImageView
-                android:id="@+id/bookImage"
+                android:id="@+id/home_bookImage"
                 android:layout_width="200dp"
                 android:layout_height="300dp"
                 android:layout_marginStart="10dp"
@@ -42,36 +47,44 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/bookTitle"
+                android:id="@+id/home_bookTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
                 android:text="제목"
-                android:textSize="30dp"
-                app:layout_constraintStart_toEndOf="@+id/bookImage"
+                android:textColor="#000000"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toTopOf="@+id/home_bookAuthor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/home_bookImage"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/author"
+                android:id="@+id/home_bookAuthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-                android:text="저자"
-                android:textSize="30dp"
-                app:layout_constraintStart_toEndOf="@+id/bookImage"
-                app:layout_constraintTop_toBottomOf="@+id/bookTitle" />
+                android:text="작가"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/home_bookImage"
+                app:layout_constraintTop_toBottomOf="@+id/home_bookTitle" />
 
             <TextView
-                android:id="@+id/bookContent"
-                android:layout_width="198dp"
+                android:id="@+id/home_bookContent"
+                android:layout_width="193dp"
                 android:layout_height="208dp"
-                android:layout_marginTop="8dp"
-                android:text="내용"
-                android:textSize="30dp"
-                app:layout_constraintStart_toEndOf="@+id/bookImage"
-                app:layout_constraintTop_toBottomOf="@+id/author" />
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:paddingRight="10dp"
+                android:text="소개"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/home_bookImage"
+                app:layout_constraintTop_toBottomOf="@+id/home_bookAuthor" />
 
         </android.support.constraint.ConstraintLayout>
 
@@ -79,13 +92,10 @@
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bestSeller_List1"
-            app:srcCompat="@drawable/alladin_logo" />
+            app:layout_constraintTop_toBottomOf="@+id/home_bestSellerList1"
+            app:srcCompat="@drawable/alladin_logo"
+            tools:layout_editor_absoluteX="0dp" />
     </android.support.constraint.ConstraintLayout>
 
 

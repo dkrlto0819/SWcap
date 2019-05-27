@@ -9,9 +9,10 @@
         android:id="@+id/imageView2"
         android:layout_width="243dp"
         android:layout_height="300dp"
-        android:layout_marginTop="212dp"
-        android:layout_marginEnd="84dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mark" />
+        app:srcCompat="@drawable/icon" />
 </android.support.constraint.ConstraintLayout>
