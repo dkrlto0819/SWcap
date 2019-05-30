@@ -16,10 +16,12 @@ public class ProcessJson {
         org.json.simple.JSONObject jsonObject = (org.json.simple.JSONObject) jsonParser.parse(jsonStr);
         org.json.simple.JSONArray jsonArray = (org.json.simple.JSONArray) jsonObject.get("items");
 
-//        for(int i=0;i<jsonArray.length();i++){
-//            org.json.simple.JSONObject tempObj = (org.json.simple.JSONObject) jsonArray.get(i);
-//            Log.d(this.getClass().getName(), "title : " + tempObj.get("title").toString());
-//            Log.d(this.getClass().getName(), "price : "+ tempObj.get("price").toString());
-//        }
+        for(int i=0;i<jsonArray.size();i++){
+            org.json.simple.JSONObject tempObj = (org.json.simple.JSONObject) jsonArray.get(i);
+            String title = tempObj.get("title").toString().replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>", "");
+                // <b> 제거 정규식
+            Log.d(this.getClass().getName(), "title : " + title);
+            Log.d(this.getClass().getName(), "price : "+ tempObj.get("price").toString());
+        }
     }
 }

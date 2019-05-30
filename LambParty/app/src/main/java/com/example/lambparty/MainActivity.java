@@ -1,9 +1,12 @@
 package com.example.lambparty;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -45,6 +48,11 @@ public class MainActivity extends AppCompatActivity
 //        toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new Fragment_Home())
+                .commit();
+
         Intent intent =new Intent(this, LoadingActivity.class);
         startActivity(intent);
     }
@@ -84,13 +92,21 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new Fragment_Home())
+                    .commit();
             // Handle the camera action
         } else if (id == R.id.nav_event) {
-
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new Fragment_Event())
+                    .commit();
         } else if (id == R.id.nav_cook) {
 
         } else if (id == R.id.nav_develop) {
