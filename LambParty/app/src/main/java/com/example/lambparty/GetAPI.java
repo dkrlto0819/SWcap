@@ -63,8 +63,8 @@ public class GetAPI{
                     response.append(inputLine);
                 }
                 br.close();
-                System.out.println("API Result : " + response.toString());
-                Log.d(this.getClass().getName(), "API Result : " + response.toString());
+                ProcessJson processJson = new ProcessJson();
+                processJson.jsonParse(response.toString());
             } catch (Exception e) {
                 Log.d(this.getClass().getName(), "Fail");
                 System.out.println(e);
