@@ -31,7 +31,7 @@ public class GetAPI{
 
             try {
 
-                String text = URLEncoder.encode("토비의 스프링 3.1", "UTF-8");
+                String text = URLEncoder.encode("베스트셀러", "UTF-8");
 
                 String apiURL = "https://openapi.naver.com/v1/search/book.json?query="+ text; // json 결과
                 URL url = new URL(apiURL);
