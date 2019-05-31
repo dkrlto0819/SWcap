@@ -1,8 +1,10 @@
 package com.example.lambparty;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -33,6 +35,7 @@ public class Fragment_Home extends Fragment {
     TextView bookTitle;
     TextView bookAuthor;
     TextView bookContent;
+    ImageView banner;
 
     Bitmap bitmap;
 
@@ -58,6 +61,12 @@ public class Fragment_Home extends Fragment {
         new webCrawlingBookTitle().execute();
         new webCrawlingBookAuthor().execute();
         new webCrawlingBookContent().execute();
+
+        try {
+            new moveToBannerWeb().execute();
+        } catch (Exception e){
+
+        }
         return rootView;
     }
 
@@ -183,4 +192,29 @@ public class Fragment_Home extends Fragment {
         }
     }
 
+    class moveToBannerWeb extends AsyncTask<Void, Void, Void>{
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result){
+            banner = (ImageView)getActivity().findViewById(R.id.banner);
+
+            banner.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.aladin.co.kr/home/welcome.aspx"));
+                    startActivity(intent);
+                }
+            });
+        }
+    }
 }
