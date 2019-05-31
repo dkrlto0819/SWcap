@@ -40,6 +40,9 @@ public class Fragment_Home extends Fragment {
 
     Bitmap bitmap;
 
+    String img;
+    URL imgUrl;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +54,7 @@ public class Fragment_Home extends Fragment {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_home, container, false);
         context=getActivity();
-
+        homeImageView = (ImageView)getActivity().findViewById(R.id.home_bookImage);
         new webCrawling().execute();
         return rootView;
     }
@@ -59,7 +62,7 @@ public class Fragment_Home extends Fragment {
     class webCrawling extends AsyncTask<Void, Void, Void>{
         @Override
         protected void onPreExecute(){
-            super.onPreExecute();;
+            super.onPreExecute();
         }
 
         @Override
@@ -67,30 +70,21 @@ public class Fragment_Home extends Fragment {
             try {
                 Document document = Jsoup.connect("https://book.naver.com/bestsell/bestseller_list.nhn").get();
                 Element element = document.select("div.thumb_type a img").first();
-                String img = element.attr("src");
+                img = element.attr("src");
+                imgUrl = new URL(img);
+                Log.d(this.getClass().getName(), "imgURL : " + imgUrl);
 
-                URL imgUrl = new URL(img);
+                HttpURLConnection connection = (HttpURLConnection)imgUrl.openConnection();
+                connection.setDoInput(true);
+                connection.connect();
 
-                HttpURLConnection conn = (HttpURLConnection) imgUrl.openConnection();
-                conn.setDoInput(true);
-                conn.connect();
-
-                InputStream is = conn.getInputStream();
-                bitmap= BitmapFactory.decodeStream(is);
-
-                homeImageView = (ImageView)getActivity().findViewById(R.id.home_bookImage);
-                homeImageView.setImageBitmap(bitmap);
-
+                InputStream is = connection.getInputStream();
+                bitmap = BitmapFactory.decodeStream(is);
+                Log.d(this.getClass().getName(), "bitmap : " + bitmap);
+                //homeImageView.setImageBitmap(bitmap);
 
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-
-            Thread mThread = new Thread(){
-                @Override
-                public void run(){
-
-                }
             }
 
             return null;
