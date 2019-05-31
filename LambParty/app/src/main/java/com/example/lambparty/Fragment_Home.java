@@ -36,6 +36,7 @@ public class Fragment_Home extends Fragment {
     Bitmap bitmap;
 
     String img;
+    String title;
     URL imgUrl;
 
     @Override
@@ -50,11 +51,12 @@ public class Fragment_Home extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_home, container, false);
         context=getActivity();
 //        homeImageView = (ImageView)getActivity().findViewById(R.id.home_bookImage);
-        new webCrawling().execute();
+        new webCrawlingBookImage().execute();
+        new webCrawlingBookTitle().execute();
         return rootView;
     }
 
-    class webCrawling extends AsyncTask<Void, Void, Bitmap>{
+    class webCrawlingBookImage extends AsyncTask<Void, Void, Bitmap>{
 
         @Override
         protected void onPreExecute(){
@@ -68,7 +70,10 @@ public class Fragment_Home extends Fragment {
                 Element element = document.select("div.thumb_type a img").first();
                 img = element.attr("src");
                 imgUrl = new URL(img);
-                Log.d(this.getClass().getName(), "imgURL : " + imgUrl);
+
+                element = document.select("div.thumb a img").first();
+                title = element.attr("alt");
+                Log.d(this.getClass().getName(), "element : " + title);
 
                 HttpURLConnection connection = (HttpURLConnection)imgUrl.openConnection();
                 connection.setDoInput(true);
@@ -89,6 +94,35 @@ public class Fragment_Home extends Fragment {
             Log.d(this.getClass().getName(), "bookImage : " + bookImage);
             homeImageView = (ImageView)getActivity().findViewById(R.id.home_bookImage);
             homeImageView.setImageBitmap(bookImage);
+        }
+    }
+
+    class webCrawlingBookTitle extends AsyncTask<Void, Void, String>{
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            try {
+                Document document = Jsoup.connect("https://book.naver.com/bestsell/bestseller_list.nhn").get();
+                Element element = document.select("div.thumb a img").first();
+                title = element.attr("alt");
+                Log.d(this.getClass().getName(), "title : "+ title);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return title;
+        }
+
+        @Override
+        protected void onPostExecute(String homeBookTitle){
+            Log.d(this.getClass().getName(), "bookImage : " + homeBookTitle);
+            bookTitle = (TextView)getActivity().findViewById(R.id.home_bookTitle);
+            bookTitle.setText(homeBookTitle);
         }
     }
 }
