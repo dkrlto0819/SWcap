@@ -16,6 +16,7 @@ import android.widget.TextView;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -38,6 +39,7 @@ public class Fragment_Home extends Fragment {
     String img;
     String title;
     String author;
+    String content;
     URL imgUrl;
 
     @Override
@@ -55,6 +57,7 @@ public class Fragment_Home extends Fragment {
         new webCrawlingBookImage().execute();
         new webCrawlingBookTitle().execute();
         new webCrawlingBookAuthor().execute();
+        new webCrawlingBookContent().execute();
         return rootView;
     }
 
@@ -75,7 +78,6 @@ public class Fragment_Home extends Fragment {
 
                 element = document.select("div.thumb a img").first();
                 title = element.attr("alt");
-                Log.d(this.getClass().getName(), "element : " + title);
 
                 HttpURLConnection connection = (HttpURLConnection)imgUrl.openConnection();
                 connection.setDoInput(true);
@@ -93,7 +95,6 @@ public class Fragment_Home extends Fragment {
 
         @Override
         protected void onPostExecute(Bitmap bookImage){
-            Log.d(this.getClass().getName(), "bookImage : " + bookImage);
             homeImageView = (ImageView)getActivity().findViewById(R.id.home_bookImage);
             homeImageView.setImageBitmap(bookImage);
         }
@@ -138,7 +139,7 @@ public class Fragment_Home extends Fragment {
             try {
                 Document document = Jsoup.connect("https://book.naver.com/bestsell/bestseller_list.nhn").get();
                 Element element = document.select("dd.txt_block a").first();
-                author = element.text();
+                author = "저자 : " + element.text();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -150,6 +151,35 @@ public class Fragment_Home extends Fragment {
         protected void onPostExecute(String homeBookAuthor){
             bookAuthor = (TextView)getActivity().findViewById(R.id.home_bookAuthor);
             bookAuthor.setText(homeBookAuthor);
+        }
+    }
+
+    class webCrawlingBookContent extends AsyncTask<Void, Void, String>{
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            try {
+                Document document = Jsoup.connect("https://book.naver.com/bestsell/bestseller_list.nhn").get();
+                Elements element = document.select("dd#book_intro_0");
+                content = element.text();
+                content = content.replace("소개", "");
+                content = content.substring(0, 90) + "...";
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return content;
+        }
+
+        @Override
+        protected void onPostExecute(String homeBookContent){
+            bookContent = (TextView)getActivity().findViewById(R.id.home_bookContent);
+            bookContent.setText(homeBookContent);
         }
     }
 
