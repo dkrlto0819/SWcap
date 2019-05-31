@@ -37,6 +37,7 @@ public class Fragment_Home extends Fragment {
 
     String img;
     String title;
+    String author;
     URL imgUrl;
 
     @Override
@@ -53,6 +54,7 @@ public class Fragment_Home extends Fragment {
 //        homeImageView = (ImageView)getActivity().findViewById(R.id.home_bookImage);
         new webCrawlingBookImage().execute();
         new webCrawlingBookTitle().execute();
+        new webCrawlingBookAuthor().execute();
         return rootView;
     }
 
@@ -110,7 +112,6 @@ public class Fragment_Home extends Fragment {
                 Document document = Jsoup.connect("https://book.naver.com/bestsell/bestseller_list.nhn").get();
                 Element element = document.select("div.thumb a img").first();
                 title = element.attr("alt");
-                Log.d(this.getClass().getName(), "title : "+ title);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -120,9 +121,36 @@ public class Fragment_Home extends Fragment {
 
         @Override
         protected void onPostExecute(String homeBookTitle){
-            Log.d(this.getClass().getName(), "bookImage : " + homeBookTitle);
             bookTitle = (TextView)getActivity().findViewById(R.id.home_bookTitle);
             bookTitle.setText(homeBookTitle);
         }
     }
+
+    class webCrawlingBookAuthor extends AsyncTask<Void, Void, String>{
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            try {
+                Document document = Jsoup.connect("https://book.naver.com/bestsell/bestseller_list.nhn").get();
+                Element element = document.select("dd.txt_block a").first();
+                author = element.text();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return author;
+        }
+
+        @Override
+        protected void onPostExecute(String homeBookAuthor){
+            bookAuthor = (TextView)getActivity().findViewById(R.id.home_bookAuthor);
+            bookAuthor.setText(homeBookAuthor);
+        }
+    }
+
 }
