@@ -198,7 +198,7 @@ public class Fragment_List extends Fragment {
                 public void onClick(View v) {
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[4][result]))
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData))
                             .commit();
                 }
             });
@@ -208,7 +208,7 @@ public class Fragment_List extends Fragment {
                 public void onClick(View v) {
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[4][result]))
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData))
                             .commit();
                 }
             });
@@ -218,7 +218,7 @@ public class Fragment_List extends Fragment {
                 public void onClick(View v) {
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[4][result]))
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData))
                             .commit();
                 }
             });
@@ -228,7 +228,7 @@ public class Fragment_List extends Fragment {
                 public void onClick(View v) {
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[4][result]))
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData))
                             .commit();
                 }
             });

@@ -11,12 +11,13 @@ import android.view.ViewGroup;
 @SuppressLint("ValidFragment")
 public class Fragment_Buy extends Fragment {
     String link;
+    String[][] data;
 
     View rootView;
     Context context;
     @SuppressLint("ValidFragment")
-    Fragment_Buy(String link){
-        this.link = link;
+    Fragment_Buy(String[][] data){
+        this.data = data;
     }
 
     @Override
