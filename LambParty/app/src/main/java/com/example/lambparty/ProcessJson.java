@@ -11,7 +11,7 @@ import org.json.simple.parser.ParseException;
 public class ProcessJson {
     public String[][] jsonParse(String jsonStr) throws ParseException, JSONException {
         JSONParser jsonParser = new JSONParser();
-        String[][] resultData = new String[4][3];
+        String[][] resultData = new String[5][3];
 
         Log.d(this.getClass().getName(), jsonStr);
         org.json.simple.JSONObject jsonObject = (org.json.simple.JSONObject) jsonParser.parse(jsonStr);
@@ -26,6 +26,9 @@ public class ProcessJson {
             resultData[1][i] = tempObj.get("author").toString();
             resultData[2][i] = description;
             resultData[3][i] = tempObj.get("image").toString();
+            resultData[4][i] = tempObj.get("link").toString();
+
+            Log.d(this.getClass().getName(), "This is link : " + resultData[4][i]);
 
             Log.d(this.getClass().getName(), "title : " + title);
             Log.d(this.getClass().getName(), "price : "+ tempObj.get("price").toString());

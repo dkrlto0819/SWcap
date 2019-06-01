@@ -143,7 +143,7 @@ public class Fragment_List extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(Integer result){
+        protected void onPostExecute(Integer result){  /// textView 구성
             String titleString = "list_bookTitle" + result;
             String authorString = "list_bookAuthor" + result;
             String contentString = "list_bookContent" + result;
@@ -165,6 +165,66 @@ public class Fragment_List extends Fragment {
             author.setText(resultData[1][result-1]);
             content.setText(resultData[2][result-1]);
             bookImage.setImageBitmap(bitmap);
+        }
+    }
+
+    class selectBook extends AsyncTask<Integer, Void, Integer>{
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Integer doInBackground(Integer... index) {
+            return index[0];
+        }
+
+        @Override
+        protected void onPostExecute(Integer result){
+            String titleString = "list_bookTitle" + result;
+            String authorString = "list_bookAuthor" + result;
+            String contentString = "list_bookContent" + result;
+            String imageString = "list_bookImage" + result;
+
+            titleID = getResources().getIdentifier(titleString, "id", getActivity().getPackageName());
+            authorID = getResources().getIdentifier(authorString, "id", getActivity().getPackageName());
+            contentID = getResources().getIdentifier(contentString, "id", getActivity().getPackageName());
+            imageID = getResources().getIdentifier(imageString, "id", getActivity().getPackageName());
+
+            title = (TextView)getActivity().findViewById(titleID);
+            author = (TextView)getActivity().findViewById(authorID);
+            content = (TextView)getActivity().findViewById(contentID);
+            bookImage = (ImageView)getActivity().findViewById(imageID);
+
+            title.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
+            author.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
+            content.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
+            bookImage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
+
         }
     }
 
