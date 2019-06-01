@@ -90,11 +90,6 @@ public class Fragment_List extends Fragment {
         }
 
         for(int i=1;i<=3;i++){
-//            String titleString = "list_bookTitle" + i;
-//            String authorString = "list_bookAuthor" + i;
-//            String contentString = "list_bookContent" + i;
-//            String imageString = "list_bookImage" + i;
-
             imgUrl = resultData[3][i-1];
 
             Thread mThread = new Thread(){
@@ -121,7 +116,8 @@ public class Fragment_List extends Fragment {
             mThread.start();
             try{
                 mThread.join();
-                new moveToBannerWeb().execute(i);
+                new makeList().execute(i);
+                new selectBook().execute(i);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -130,7 +126,7 @@ public class Fragment_List extends Fragment {
         return rootView;
     }
 
-    class moveToBannerWeb extends AsyncTask<Integer, Void, Integer> {
+    class makeList extends AsyncTask<Integer, Void, Integer> {
 
         @Override
         protected void onPreExecute(){
@@ -181,7 +177,7 @@ public class Fragment_List extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(Integer result){
+        protected void onPostExecute(final Integer result){
             String titleString = "list_bookTitle" + result;
             String authorString = "list_bookAuthor" + result;
             String contentString = "list_bookContent" + result;
@@ -200,28 +196,40 @@ public class Fragment_List extends Fragment {
             title.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[4][result]))
+                            .commit();
                 }
             });
 
             author.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[4][result]))
+                            .commit();
                 }
             });
 
             content.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[4][result]))
+                            .commit();
                 }
             });
 
             bookImage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[4][result]))
+                            .commit();
                 }
             });
 
