@@ -56,7 +56,7 @@ public class Fragment_Home extends Fragment {
         // Inflate the layout for this fragment
         rootView = inflater.inflate(R.layout.fragment_home, container, false);
         context=getActivity();
-//        homeImageView = (ImageView)getActivity().findViewById(R.id.home_bookImage);
+
         new webCrawlingBookImage().execute();
         new webCrawlingBookTitle().execute();
         new webCrawlingBookAuthor().execute();
