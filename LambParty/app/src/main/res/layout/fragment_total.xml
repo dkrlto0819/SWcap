@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/total_bookImage" />
 
     <Button
-        android:id="@+id/tatol_priceButton"
+        android:id="@+id/total_priceButton"
         android:layout_width="40dp"
         android:layout_height="20dp"
         android:layout_marginTop="15dp"
@@ -93,7 +93,7 @@
         android:text="마일리지"
         android:textColor="#ffffff"
         android:textSize="10dp"
-        app:layout_constraintStart_toEndOf="@+id/tatol_priceButton"
+        app:layout_constraintStart_toEndOf="@+id/total_priceButton"
         app:layout_constraintTop_toBottomOf="@+id/total_bookImage" />
     <TableLayout
         android:id="@+id/total_Table"
@@ -110,17 +110,19 @@
         <TableRow>
 
             <TextView
+                android:id="@+id/total_alladin"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:text="알라딘"
-                android:textSize="15dp"
                 android:textColor="#000000"
-                android:layout_gravity="center"/>
+                android:textSize="15dp" />
         </TableRow>
 
         <TableRow>
 
             <TextView
+                android:id="@+id/total_alladin_price"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="얼마" />

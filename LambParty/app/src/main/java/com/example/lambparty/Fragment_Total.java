@@ -7,11 +7,19 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -25,18 +33,28 @@ class Fragment_Total extends Fragment {
     Context context;
 
     String[] data;
+    String[][] list;
+    int[] prices;
+
+    TextView alladin;
+    TextView alladin_price;
 
     TextView title;
     TextView author;
     TextView content;
     ImageView bookImage;
-    TextView price;
+
+    Button all;
+    Button price;
+    Button mileage;
 
     Bitmap bitmap;
     String imgUrl;
 
     public Fragment_Total(String[] data) {
         this.data=data;
+        list=new String[4][4];
+        prices = new int[4];
     }
 
     @Override
@@ -77,6 +95,7 @@ class Fragment_Total extends Fragment {
         try{
             mThread.join();
             new makeList().execute();
+            new webCrawlingList().execute();
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -110,6 +129,83 @@ class Fragment_Total extends Fragment {
             content.setText(data[2]);
             bookImage.setImageBitmap(bitmap);
             //price.setText("정가 : "+ data[5]);
+        }
+    }
+
+    class webCrawlingList extends AsyncTask<Void, Void, String>{
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            try {
+                Document document = Jsoup.connect(data[4]).get();
+                Elements elements = document.select("div.npay_wrap a");
+                int count=1;
+                for(Element element : elements) {
+                    if(count%3==1) {
+                        int index = count/3;
+                        list[index][0] = element.text();
+                    }
+                    if(count>=8) break;
+                    count++;
+                }
+                elements = document.select("li.lowest span em");
+                count=1;
+                for(Element element : elements) {
+                    list[count-1][1] = element.text();
+                    prices[count-1]=Integer.parseInt(list[count-1][1].replace("원", ""));
+                    if(count>=3) break;
+                    count++;
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String homeBookAuthor){
+            alladin=(TextView)getActivity().findViewById(R.id.total_alladin);
+            alladin_price = (TextView)getActivity().findViewById(R.id.total_alladin_price);
+
+            list[2][2]="플래티넘 등급 : " +  Integer.toString(prices[2]/100*3) + " / "
+                    + "골드등급 : " + Integer.toString(prices[2]/100*2) + " / "
+                    + "실버등급 : " + Integer.toString(prices[2]/100);
+
+            alladin.setText(list[2][0]+" : "+list[2][1]);
+            alladin_price.setText(list[2][2]);
+        }
+    }
+
+    class buttonClick extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result){  /// textView 구성
+            all = (Button)getActivity().findViewById(R.id.total_allButton);
+            price = (Button)getActivity().findViewById(R.id.total_priceButton);
+            mileage = (Button)getActivity().findViewById(R.id.total_mileageButton);
+
+            all.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                  
+                }
+            });
         }
     }
 }
