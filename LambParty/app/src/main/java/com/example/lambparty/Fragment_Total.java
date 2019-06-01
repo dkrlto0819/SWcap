@@ -96,6 +96,7 @@ class Fragment_Total extends Fragment {
             mThread.join();
             new makeList().execute();
             new webCrawlingList().execute();
+            new buttonClick().execute();
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -203,9 +204,27 @@ class Fragment_Total extends Fragment {
             all.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                  
+                    alladin.setText(list[2][0]+" : "+list[2][1]);
+                    alladin_price.setText(list[2][2]);
                 }
             });
+
+            price.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alladin.setText(list[2][0]+" : "+list[2][1]);
+                    alladin_price.setText("");
+                }
+            });
+
+            mileage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    alladin.setText(list[2][0]);
+                    alladin_price.setText(list[2][2]);
+                }
+            });
+
         }
     }
 }
