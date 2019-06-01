@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -32,9 +33,11 @@ public class Fragment_Buy extends Fragment {
     TextView content;
     ImageView bookImage;
     TextView price;
+    Button button;
 
     Bitmap bitmap;
     String imgUrl;
+
 
     @SuppressLint("ValidFragment")
     Fragment_Buy(String[] data){
@@ -79,6 +82,7 @@ public class Fragment_Buy extends Fragment {
         try{
             mThread.join();
             new makeList().execute();
+            new goToBuyPage().execute();
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -112,6 +116,35 @@ public class Fragment_Buy extends Fragment {
             content.setText(data[2]);
             bookImage.setImageBitmap(bitmap);
             price.setText("정가 : "+ data[5]);
+        }
+    }
+
+    class goToBuyPage extends AsyncTask<Void, Void, Void>{
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result){
+            button = (Button)getActivity().findViewById(R.id.buyButton);
+
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    getActivity().getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.fragment_container, new Fragment_Total(data))
+                            .commit();
+                }
+            });
+
         }
     }
 }

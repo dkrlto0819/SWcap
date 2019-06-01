@@ -235,5 +235,4 @@ public class Fragment_List extends Fragment {
 
         }
     }
-
 }
