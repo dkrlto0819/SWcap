@@ -90,7 +90,7 @@ public class Fragment_List extends Fragment {
         }
 
         for(int i=1;i<=3;i++){
-            imgUrl = resultData[3][i-1];
+            imgUrl = resultData[i-1][3];
 
             Thread mThread = new Thread(){
                 @Override
@@ -157,9 +157,9 @@ public class Fragment_List extends Fragment {
 
             Log.d(this.getClass().getName(), "This is title : "+ title);
 
-            title.setText(resultData[0][result-1]);
-            author.setText(resultData[1][result-1]);
-            content.setText(resultData[2][result-1]);
+            title.setText(resultData[result-1][0]);
+            author.setText(resultData[result-1][1]);
+            content.setText(resultData[result-1][2]);
             bookImage.setImageBitmap(bitmap);
         }
     }
@@ -198,7 +198,7 @@ public class Fragment_List extends Fragment {
                 public void onClick(View v) {
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.fragment_container, new Fragment_Buy(resultData))
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[result-1]))
                             .commit();
                 }
             });
@@ -208,7 +208,7 @@ public class Fragment_List extends Fragment {
                 public void onClick(View v) {
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.fragment_container, new Fragment_Buy(resultData))
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[result-1]))
                             .commit();
                 }
             });
@@ -218,7 +218,7 @@ public class Fragment_List extends Fragment {
                 public void onClick(View v) {
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.fragment_container, new Fragment_Buy(resultData))
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[result-1]))
                             .commit();
                 }
             });
@@ -228,7 +228,7 @@ public class Fragment_List extends Fragment {
                 public void onClick(View v) {
                     getActivity().getSupportFragmentManager()
                             .beginTransaction()
-                            .replace(R.id.fragment_container, new Fragment_Buy(resultData))
+                            .replace(R.id.fragment_container, new Fragment_Buy(resultData[result-1]))
                             .commit();
                 }
             });

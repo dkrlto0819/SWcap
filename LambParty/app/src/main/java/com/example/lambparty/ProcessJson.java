@@ -11,7 +11,7 @@ import org.json.simple.parser.ParseException;
 public class ProcessJson {
     public String[][] jsonParse(String jsonStr) throws ParseException, JSONException {
         JSONParser jsonParser = new JSONParser();
-        String[][] resultData = new String[6][3];
+        String[][] resultData = new String[3][6];
 
         Log.d(this.getClass().getName(), jsonStr);
         org.json.simple.JSONObject jsonObject = (org.json.simple.JSONObject) jsonParser.parse(jsonStr);
@@ -22,17 +22,12 @@ public class ProcessJson {
             String title = tempObj.get("title").toString().replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>", "");
             String description = tempObj.get("description").toString().replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>", "");
                 // <b> 제거 정규식
-            resultData[0][i] = title;
-            resultData[1][i] = tempObj.get("author").toString();
-            resultData[2][i] = description;
-            resultData[3][i] = tempObj.get("image").toString();
-            resultData[4][i] = tempObj.get("link").toString();
-            resultData[5][i] = tempObj.get("price").toString();
-
-            Log.d(this.getClass().getName(), "This is link : " + resultData[4][i]);
-
-            Log.d(this.getClass().getName(), "title : " + title);
-            Log.d(this.getClass().getName(), "price : "+ tempObj.get("price").toString());
+            resultData[i][0] = title;
+            resultData[i][1] = tempObj.get("author").toString();
+            resultData[i][2] = description;
+            resultData[i][3] = tempObj.get("image").toString();
+            resultData[i][4] = tempObj.get("link").toString();
+            resultData[i][5] = tempObj.get("price").toString();
         }
         return resultData;
     }
