@@ -72,10 +72,6 @@ public class MainActivity extends AppCompatActivity
                 .beginTransaction()
                 .replace(R.id.fragment_container, new Fragment_Home())
                 .commit();
-
-
-        Intent intent =new Intent(this, LoadingActivity.class);
-        startActivity(intent);
     }
 
     @Override
