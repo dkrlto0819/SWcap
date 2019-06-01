@@ -25,8 +25,8 @@
 
             <ImageView
                 android:id="@+id/logo"
-                android:layout_width="300dp"
-                android:layout_height="70dp"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
                 android:layout_marginBottom="7dp"
                 app:layout_constraintBottom_toTopOf="@+id/searchButton"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="37dp"
                 android:layout_marginEnd="12dp"
+                android:layout_marginRight="10dp"
                 android:text="Search"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/searchText"
@@ -64,7 +65,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="20dp"
-                android:background="#60BBBB"
+                android:background="#39296A"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -72,8 +73,10 @@
 
             <ImageView
                 android:id="@+id/list"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
+                android:layout_width="25dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/list"
                 app:layout_constraintBottom_toTopOf="@+id/searchText"
                 app:layout_constraintEnd_toStartOf="@+id/logo"
