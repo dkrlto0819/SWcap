@@ -38,6 +38,16 @@ class Fragment_Total extends Fragment {
 
     TextView alladin;
     TextView alladin_price;
+    TextView alladin_mileage;
+
+    TextView yes24;
+    TextView yes24_price;
+    TextView yes24_mileage;
+
+    TextView kyobo;
+    TextView kyobo_price;
+    TextView kyobo_mileage;
+
 
     TextView title;
     TextView author;
@@ -171,15 +181,42 @@ class Fragment_Total extends Fragment {
 
         @Override
         protected void onPostExecute(String homeBookAuthor){
-            alladin=(TextView)getActivity().findViewById(R.id.total_alladin);
-            alladin_price = (TextView)getActivity().findViewById(R.id.total_alladin_price);
+            alladin_price = (TextView)getActivity().findViewById(R.id.total_alladinPrice);
+            alladin_mileage = (TextView)getActivity().findViewById(R.id.total_alladinMileage);
 
             list[2][2]="플래티넘 등급 : " +  Integer.toString(prices[2]/100*3) + " / "
                     + "골드등급 : " + Integer.toString(prices[2]/100*2) + " / "
                     + "실버등급 : " + Integer.toString(prices[2]/100);
 
-            alladin.setText(list[2][0]+" : "+list[2][1]);
-            alladin_price.setText(list[2][2]);
+            alladin_price.setText(list[2][1]);
+            alladin_mileage.setText(list[2][2]);
+
+            // *** alladin *** ///
+
+            yes24_price = (TextView)getActivity().findViewById(R.id.total_yes24Price);
+            yes24_mileage = (TextView)getActivity().findViewById(R.id.total_yes24Mileage);
+
+            list[0][2]="플래티넘 등급 : " +  Integer.toString(prices[0]/100*3) + " / "
+                    + "골드등급 : " + Integer.toString(prices[0]/100*2) + " / "
+                    + "로얄등급 : " + Integer.toString(prices[0]/100);
+
+            yes24_price.setText(list[0][1]);
+            yes24_mileage.setText(list[0][2]);
+
+            //**** yes24 **** ////
+
+            kyobo_price = (TextView)getActivity().findViewById(R.id.total_kyoboPrice);
+            kyobo_mileage = (TextView)getActivity().findViewById(R.id.total_kyoboMileage);
+
+            list[1][2]="플래티넘 등급 : " +  Integer.toString(prices[1]/100*4) + " / "
+                    + "골드등급 : " + Integer.toString(prices[1]/100*3) + " / "
+                    + "실버등급 : " + Integer.toString(prices[1]/100*2);
+
+            kyobo_price.setText(list[1][1]);
+            kyobo_mileage.setText(list[1][2]);
+
+            // *** kyobo *** ///
+
         }
     }
 
@@ -204,24 +241,46 @@ class Fragment_Total extends Fragment {
             all.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    alladin.setText(list[2][0]+" : "+list[2][1]);
-                    alladin_price.setText(list[2][2]);
+                    alladin_price.setText(list[2][1]);
+                    alladin_mileage.setText(list[2][2]);
+
+                    yes24_price.setText(list[0][1]);
+                    yes24_mileage.setText(list[0][2]);
+
+                    kyobo_price.setText(list[1][1]);
+                    kyobo_mileage.setText(list[1][2]);
+
+
                 }
             });
 
             price.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    alladin.setText(list[2][0]+" : "+list[2][1]);
-                    alladin_price.setText("");
+                    alladin_price.setText(list[2][1]);
+                    alladin_mileage.setText("");
+
+                    yes24_price.setText(list[0][1]);
+                    yes24_mileage.setText("");
+
+                    kyobo_price.setText(list[1][1]);
+                    kyobo_mileage.setText("");
+
                 }
             });
 
             mileage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    alladin.setText(list[2][0]);
-                    alladin_price.setText(list[2][2]);
+                    alladin_price.setText("");
+                    alladin_mileage.setText(list[2][2]);
+
+                    yes24_price.setText("");
+                    yes24_mileage.setText(list[0][2]);
+
+                    kyobo_price.setText("");
+                    kyobo_mileage.setText(list[1][2]);
+
                 }
             });
 

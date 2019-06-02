@@ -22,6 +22,7 @@ public class ProcessJson {
             String title = tempObj.get("title").toString().replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>", "");
             String description = tempObj.get("description").toString().replaceAll("<(/)?([a-zA-Z]*)(\\s[a-zA-Z]*=[^>]*)?(\\s)*(/)?>", "");
                 // <b> 제거 정규식
+            description = description.replaceAll("&#x0D;&#x0D;", "");
             resultData[i][0] = title;
             resultData[i][1] = tempObj.get("author").toString();
             resultData[i][2] = description;
