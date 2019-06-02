@@ -258,13 +258,13 @@ class Fragment_Total extends Fragment {
             all.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    alladin_price.setText(list[2][1]);
+                    alladin_price.setText(list[2][1] + " / 도서산간 : " + list[2][1]);
                     alladin_mileage.setText(list[2][2]);
 
-                    yes24_price.setText(list[0][1]);
+                    yes24_price.setText(list[0][1] + " / 도서산간 : " + list[0][1]);
                     yes24_mileage.setText(list[0][2]);
 
-                    kyobo_price.setText(list[1][1]);
+                    kyobo_price.setText(list[1][1] + " / 도서산간 : " + list[1][1]);
                     kyobo_mileage.setText(list[1][2]);
 
 
@@ -274,13 +274,13 @@ class Fragment_Total extends Fragment {
             price.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    alladin_price.setText(list[2][1]);
+                    alladin_price.setText(list[2][1] + " / 도서산간 : " + list[2][1]);
                     alladin_mileage.setText("");
 
-                    yes24_price.setText(list[0][1]);
+                    yes24_price.setText(list[0][1] + " / 도서산간 : " + list[0][1]);
                     yes24_mileage.setText("");
 
-                    kyobo_price.setText(list[1][1]);
+                    kyobo_price.setText(list[1][1] + " / 도서산간 : " + list[1][1]);
                     kyobo_mileage.setText("");
 
                 }
