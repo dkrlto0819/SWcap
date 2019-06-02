@@ -124,14 +124,6 @@ public class MainActivity extends AppCompatActivity
                     .beginTransaction()
                     .replace(R.id.fragment_container, new Fragment_Event())
                     .commit();
-        } else if (id == R.id.nav_cook) {
-
-        } else if (id == R.id.nav_develop) {
-
-        } else if (id == R.id.nav_fantasy) {
-
-        } else if (id == R.id.nav_IT) {
-
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

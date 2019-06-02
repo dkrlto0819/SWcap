@@ -184,11 +184,15 @@ class Fragment_Total extends Fragment {
             alladin_price = (TextView)getActivity().findViewById(R.id.total_alladinPrice);
             alladin_mileage = (TextView)getActivity().findViewById(R.id.total_alladinMileage);
 
-            list[2][2]="플래티넘 등급 : " +  Integer.toString(prices[2]/100*3) + " / "
-                    + "골드등급 : " + Integer.toString(prices[2]/100*2) + " / "
-                    + "실버등급 : " + Integer.toString(prices[2]/100);
+            if(prices[2]<=10000)
+                list[2][1] = Integer.toString(prices[2]+2000);
 
-            alladin_price.setText(list[2][1]);
+            list[2][2]= "일반 : " +  Integer.toString(prices[2]/100*5) + " / "
+                    + "플래티넘 등급 : " +  Integer.toString(prices[2]/100*8) + " / "
+                    + "골드등급 : " + Integer.toString(prices[2]/100*7) + " / "
+                    + "실버등급 : " + Integer.toString(prices[2]/100*6);
+
+            alladin_price.setText(list[2][1] + " / 도서산간 : " + list[2][1]);
             alladin_mileage.setText(list[2][2]);
 
             // *** alladin *** ///
@@ -196,11 +200,15 @@ class Fragment_Total extends Fragment {
             yes24_price = (TextView)getActivity().findViewById(R.id.total_yes24Price);
             yes24_mileage = (TextView)getActivity().findViewById(R.id.total_yes24Mileage);
 
-            list[0][2]="플래티넘 등급 : " +  Integer.toString(prices[0]/100*3) + " / "
-                    + "골드등급 : " + Integer.toString(prices[0]/100*2) + " / "
-                    + "로얄등급 : " + Integer.toString(prices[0]/100);
+            if(prices[0]<=10000)
+                list[0][1] = Integer.toString(prices[0]+2000);
 
-            yes24_price.setText(list[0][1]);
+            list[0][2]="일반 : " +  Integer.toString(prices[0]/100*5) + " / "
+                    + "플래티넘 등급 : " +  Integer.toString(prices[0]/100*8) + " / "
+                    + "골드등급 : " + Integer.toString(prices[0]/100*7) + " / "
+                    + "로얄등급 : " + Integer.toString(prices[0]/100*6);
+
+            yes24_price.setText(list[0][1] + " / 도서산간 : " + list[0][1]);
             yes24_mileage.setText(list[0][2]);
 
             //**** yes24 **** ////
@@ -208,11 +216,20 @@ class Fragment_Total extends Fragment {
             kyobo_price = (TextView)getActivity().findViewById(R.id.total_kyoboPrice);
             kyobo_mileage = (TextView)getActivity().findViewById(R.id.total_kyoboMileage);
 
-            list[1][2]="플래티넘 등급 : " +  Integer.toString(prices[1]/100*4) + " / "
-                    + "골드등급 : " + Integer.toString(prices[1]/100*3) + " / "
-                    + "실버등급 : " + Integer.toString(prices[1]/100*2);
+            if(prices[1]<=10000)
+                list[1][1] = Integer.toString(prices[1]+2000);
 
-            kyobo_price.setText(list[1][1]);
+            if(prices[1]>=30000) {
+
+                list[1][2] = "일반 : " + Integer.toString(prices[1] / 100 * 5) + " / "
+                        + "플래티넘 등급 : " + Integer.toString(prices[1] / 100 * 9) + " / "
+                        + "골드등급 : " + Integer.toString(prices[1] / 100 * 8) + " / "
+                        + "실버등급 : " + Integer.toString(prices[1] / 100 * 7);
+            }else{
+                list[1][2] = Integer.toString(prices[1] / 100 * 5);
+            }
+
+            kyobo_price.setText(list[1][1] + " / 도서산간 : " + list[1][1]);
             kyobo_mileage.setText(list[1][2]);
 
             // *** kyobo *** ///
