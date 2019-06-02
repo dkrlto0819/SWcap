@@ -57,7 +57,6 @@ public class Fragment_Event extends Fragment {
 
         @Override
         protected void onPostExecute(Void result){
-            Log.d(this.getClass().getName(), "Hello!");
             aladin = (ImageView)getActivity().findViewById(R.id.event_alladin);
             yes24 = (ImageView)getActivity().findViewById(R.id.event_yes);
             kyobo = (ImageView)getActivity().findViewById(R.id.event_kyobo);

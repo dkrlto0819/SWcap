@@ -12,8 +12,6 @@ public class ProcessJson {
     public String[][] jsonParse(String jsonStr) throws ParseException, JSONException {
         JSONParser jsonParser = new JSONParser();
         String[][] resultData = new String[3][6];
-
-        Log.d(this.getClass().getName(), jsonStr);
         org.json.simple.JSONObject jsonObject = (org.json.simple.JSONObject) jsonParser.parse(jsonStr);
         org.json.simple.JSONArray jsonArray = (org.json.simple.JSONArray) jsonObject.get("items");
 

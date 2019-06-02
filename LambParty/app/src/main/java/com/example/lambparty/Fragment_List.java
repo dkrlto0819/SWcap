@@ -78,7 +78,6 @@ public class Fragment_List extends Fragment {
             e.printStackTrace();
         }
 
-        Log.d(this.getClass().getName(), "This is json Data : " + jsonData);
         resultData = new String[10][10];
         ProcessJson processJson = new ProcessJson();
         try {
@@ -154,8 +153,6 @@ public class Fragment_List extends Fragment {
             author = (TextView)getActivity().findViewById(authorID);
             content = (TextView)getActivity().findViewById(contentID);
             bookImage = (ImageView)getActivity().findViewById(imageID);
-
-            Log.d(this.getClass().getName(), "This is title : "+ title);
 
             title.setText(resultData[result-1][0]);
             author.setText(resultData[result-1][1]);

@@ -51,7 +51,6 @@ public class GetAPI{
 
                 int responseCode = con.getResponseCode();
                 BufferedReader br;
-                Log.d(this.getClass().getName(), "responseCode : " + responseCode);
 
                 if(responseCode==200) { // 정상 호출
 
@@ -68,12 +67,9 @@ public class GetAPI{
                 }
                 br.close();
 
-                Log.d(this.getClass().getName(), "Data : " + response.toString());
-
                 jsonText = response.toString();
 
             } catch (Exception e) {
-                Log.d(this.getClass().getName(), "Fail");
                 System.out.println(e);
             }
             return jsonText;
