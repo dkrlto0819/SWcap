@@ -7,9 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c2e1158-bc39-4b9f-8d79-04b1122d94e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/table_border.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/table_borderunder.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_loading.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_loading.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/content_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/content_main.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_buy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_buy.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_home.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_list.xml" afterDir="false" />
@@ -38,43 +38,16 @@
       </state>
     </system>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="LambParty" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
+            <state>
               <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_buy.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="60" column="31" lean-forward="true" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_home.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_list.xml">
-          <provider editor-type-id="android-designer2" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -83,8 +56,26 @@
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_total.xml">
           <provider editor-type-id="android-designer2" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+            <state relative-caret-position="290">
+              <caret line="112" column="50" lean-forward="true" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/res/drawable/table_border.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/res/drawable/table_borderunder.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -95,6 +86,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -106,18 +98,21 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/res/layout/content_main.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_loading.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_buy.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_home.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_list.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_buy.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/drawable/table_borderunder.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/drawable/table_border.xml" />
+        <option value="$PROJECT_DIR$/src/main/res/drawable/table_borderunder2.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_total.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="232" />
-    <option name="y" value="54" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="635" />
+    <option name="y" value="33" />
     <option name="width" value="1622" />
-    <option name="height" value="1000" />
+    <option name="height" value="1013" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -144,7 +139,7 @@
               <item name="LambParty" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -154,7 +149,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="device.picker.selection" value="3300ccff3245a3a7" />
+    <property name="device.picker.selection" value="3300e83c30c99345" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -245,12 +240,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="232" y="54" width="1622" height="1000" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.13630491" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4967742" visible="true" weight="0.11331901" />
       <window_info id="Structure" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Favorites" order="3" sideWeight="0.5032258" side_tool="true" visible="true" weight="0.11331901" />
       <window_info id="Build Variants" order="4" side_tool="true" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Designer" order="6" />
@@ -262,15 +257,15 @@
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="6" />
-      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.24970274" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="6" visible="true" weight="0.30880713" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.24970274" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info active="true" anchor="right" id="Preview" order="5" visible="true" weight="0.3611111" />
+      <window_info active="true" anchor="right" id="Preview" order="5" visible="true" weight="0.40494093" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -296,7 +291,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
@@ -305,6 +299,7 @@
           </folding>
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/content_main.xml">
       <provider editor-type-id="android-designer2" />
@@ -340,8 +335,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
+        <state>
           <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_list.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
@@ -349,31 +352,44 @@
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
-          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_buy.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="60" column="31" lean-forward="true" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
+        <state relative-caret-position="432">
+          <caret line="64" column="28" selection-start-line="64" selection-start-column="28" selection-end-line="64" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_list.xml">
-      <provider editor-type-id="android-designer2" />
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/table_borderunder.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        <state relative-caret-position="322">
+          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/table_borderunder2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable/table_border.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_total.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        <state relative-caret-position="290">
+          <caret line="112" column="50" lean-forward="true" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
         </state>
       </provider>
     </entry>
